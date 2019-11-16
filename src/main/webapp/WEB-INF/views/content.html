@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Detail Post</title>
+</head>
+<body>
+<fieldset>
+    <legend><h2>Detail Post : <span th:text="${blog.title}"></span></h2></legend>
+    <p>
+        <a href="/home">Back To Blog Home</a>
+    </p>
+    <form th:action="@{/edit-content/__${blog.id}__}" method="get" th:object="${blog}">
+        <table border="1">
+            <tr>
+                <td><p th:text="${blog.content}"></p></td>
+            </tr>
+        </table>
+        <button type="submit">Edit Post</button>
+    </form>
+</fieldset>
+</body>
+</html>

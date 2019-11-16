@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Content</title>
+</head>
+<body>
+<fieldset>
+    <legend><h2>Edit Content : <span th:text="${blog.title}"></span></h2></legend>
+    <p>
+        <a href="/home">Back To Blog Home</a>
+    </p>
+    <th:block th:if="${message}">
+        <span th:text="${message}"></span>
+    </th:block>
+    <form th:action="@{/edit-content}" method="post" th:object="${blog}">
+        <input type="hidden" th:field="${blog.id}"/>
+        <label>Title</label><br>
+        <textarea th:field="${blog.title}" cols="100"></textarea><br>
+        <label>Content</label><br>
+        <textarea th:field="${blog.content}" cols="100" rows="20"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</fieldset>
+</body>
+</html>

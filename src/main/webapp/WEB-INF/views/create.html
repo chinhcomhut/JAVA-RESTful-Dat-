@@ -1,0 +1,46 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>create</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<fieldset>-->
+<!--    <legend>New Post</legend>-->
+<!--    <P>-->
+<!--        <a th:href="/home">Back to blog home</a>-->
+<!--    </P>-->
+<!--    <form th:action="@{/create-new-post/}" method="post" th:object="${newPost}">-->
+<!--        <label>Title</label><br>-->
+<!--        <textarea th:field="${newPost.title}" cols="100"></textarea><br>-->
+<!--        <label>Content</label><br>-->
+<!--        <textarea th:field="${newPost.content}" cols="100" rows="10"></textarea>-->
+<!--    </form>-->
+
+<!--</fieldset>-->
+<!--</body>-->
+<!--</html>-->
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New Post</title>
+</head>
+<body>
+<fieldset>
+    <legend><h2>New Post</h2></legend>
+    <p>
+        <a href="/home">Back To Blog Home</a>
+    </p>
+    <form th:action="@{/create-new-post/}" method="post" th:object="${newPost}">
+        <label>Title</label><br>
+        <textarea th:field="${newPost.title}" cols="100"></textarea><br>
+        <label>Content</label><br>
+        <textarea th:field="${newPost.content}" cols="100" rows="20"></textarea><br>
+        <button type="submit">Submit</button>
+    </form>
+</fieldset>
+</body>
+</html>

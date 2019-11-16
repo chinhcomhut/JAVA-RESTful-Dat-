@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<fieldset>
+    <legend><h2>All Post</h2></legend>
+    <p>
+        <a href="/create-new-post">New Post</a>
+    </p>
+    <form>
+        <table border="1">
+            <tr>
+                <th>Title</th>
+                <th>Delete</th>
+            </tr>
+            <th:block th:each="b : ${blog}">
+                <tr>
+                    <td><a th:href="@{/show-content/__${b.id}__}"  th:text="${b.title}"></a></td>
+                    <td><a th:href="@{/delete-post/__${b.id}__}">Delete</a></td>
+                </tr>
+            </th:block>
+        </table>
+    </form>
+</fieldset>
+</body>
+</html>
